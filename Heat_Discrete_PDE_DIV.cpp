@@ -31,7 +31,7 @@ EU_Call_Div_PDE::EU_Call_Div_PDE(double S, double K, double T, double vol, doubl
     x_right_new=x_right-std::log(1.0-q_div);
     x_compute_new=std::log(S/K);
 
-    M2= static_cast<int>((tau_final-tau_div)/delta_tau1);   // Delta_tau1=alpha1*(delta_x)^2
+    M2= static_cast<int>(ceil((tau_final-tau_div)/delta_tau1));   // Delta_tau1=alpha1*(delta_x)^2
 
     delta_tau2=(tau_final-tau_div)/ static_cast<double>(M2);
     alpha2=delta_tau2/std::pow(delta_x, 2.0);

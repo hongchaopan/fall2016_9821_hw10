@@ -80,9 +80,9 @@ void HW10_P4_3(){
 
     MatrixXd res1, res2;
     tie(res1, res2)=eu_div_pde.Forward_Euler();
-    file<<"First Domain (before tau_div_+"<<endl;
+    file<<"First Domain (before tau_div_+)"<<endl;
     file<<res1.format(MatrixFormat)<<endl;
-    file<<"Second Domain (after tau_div_-"<<endl;
+    file<<"Second Domain (after tau_div_-)"<<endl;
     file<<res2.format(MatrixFormat)<<endl;
 
     file.close();
