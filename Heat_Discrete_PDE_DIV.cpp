@@ -91,12 +91,12 @@ std::tuple<MatrixXd, MatrixXd> EU_Call_Div_PDE::Forward_Euler() {
     res2.block(0, 1, 1, N - 1) = U.transpose();
     bv.setZero();
     for (int m = 0; m < M2; ++m) {
-        bv(0) = alpha2 * g_left(tau_div + m * delta_tau1);
-        bv(N - 2) = alpha2 * g_right2(tau_div + m * delta_tau1);
+        bv(0) = alpha2 * g_left(tau_div + m * delta_tau2);
+        bv(N - 2) = alpha2 * g_right2(tau_div + m * delta_tau2);
         U = A1 * U + bv;
-        res2(m + 1, 0) = g_left(tau_div + (m + 1.0) * delta_tau1);
+        res2(m + 1, 0) = g_left(tau_div + (m + 1.0) * delta_tau2);
         res2.block(m + 1, 1, 1, N - 1) = U.transpose();
-        res2(m + 1, N) = g_right2(tau_div + (m + 1.0) * delta_tau1);
+        res2(m + 1, N) = g_right2(tau_div + (m + 1.0) * delta_tau2);
     }
     return std::make_tuple(res1, res2);
 
