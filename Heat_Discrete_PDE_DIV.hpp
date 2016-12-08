@@ -12,7 +12,6 @@
 #include <functional>
 #include "LinearSolver.hpp"
 
-
 using namespace Eigen;
 
 class EU_Call_Div_PDE{

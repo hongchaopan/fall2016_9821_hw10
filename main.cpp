@@ -55,7 +55,8 @@ void HW10_P4_2(){
     }
     file<<endl;
 
-    file<<"Crank-Nicolson with LU of tridiagonal and alpha=0.4"<<endl;
+    file<<"Crank-Nicolson with LU of tridiagonal and alpha=4"<<endl;
+    alpha1=4;
     for(int M1:{4,16,64,256}){
         EU_Call_Div_PDE eu_div_pde(S,K,T,vol,r,q_div,t_div,M1,alpha1);
         MatrixXd res1, res2;
