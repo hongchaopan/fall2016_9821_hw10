@@ -48,7 +48,8 @@ double EU_Call_Div_PDE::g_right1(double tau) const {
 }
 
 double EU_Call_Div_PDE::g_right2(double tau) const {
-    return K*exp(a*x_right_new+b*tau)*(exp(x_right_new)-exp(-2.0*r*tau/(vol*vol)));
+    //return K*exp(a*x_right_new+b*tau)*(exp(x_right_new)-exp(-2.0*r*tau/(vol*vol)));
+    return K*exp(a*x_right+b*tau)*(exp(x_right)-exp(-2.0*r*tau/(vol*vol)));
 }
 
 std::tuple<MatrixXd, MatrixXd> EU_Call_Div_PDE::Forward_Euler() {

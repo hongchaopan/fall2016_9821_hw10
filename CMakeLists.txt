@@ -3,7 +3,7 @@ project(MTH9821_HW10)
 
 set(CMAKE_CXX_STANDARD 11)
 
-include_directories("/usr/include/Eigen")
+include_directories("/usr/local/Eigen3")
 
 
 set(SOURCE_FILES
